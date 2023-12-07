@@ -8,7 +8,7 @@ def readSeeds(inputLines: 'list[str]'):
     while idx < len(seeds):
         start = seeds[idx]
         length = seeds[idx+1]
-        totalSeeds.append((start, start+length-1))
+        totalSeeds.append((start, start+length))
         idx += 2
     return totalSeeds, inputLines[2:]
 
@@ -17,7 +17,7 @@ def makeRangeEntry(line: 'str'):
     dst = nums[1]
     src = nums[0]
     rlen = nums[2]
-    return (dst, dst+rlen-1), src-dst
+    return (dst, dst+rlen), src-dst
 
 def readMap(inputLines: 'list[str]'):
     rangeMap: 'list[tuple[tuple[int, int], int]]' = []
